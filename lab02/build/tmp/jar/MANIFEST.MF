@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: lab02.SimpleTest
+Implementation-Title: Sample-Gradle
+Implementation-Version: 1.0
+

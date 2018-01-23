@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Main-Class': 'lab02.SimpleTest',
+			   'Implementation-Title': 'Sample-Gradle',
+			   'Implementation-Version': version
+	}
+}
