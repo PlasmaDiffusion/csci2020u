@@ -1,11 +1,25 @@
 apply plugin: 'java'
 
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	compile group: 'com.walterjwhite.modules.csv.modules',
+		name: 'apache-commons-csv',
+		version: '0.0.14'
+}
+
 sourceCompatibility = 1.7
 version = '1.0'
 jar {
 	manifest {
-		attributes 'Main-Class': 'lab02.SimpleTest',
+		attributes 'Main-Class': 'lab02.CSVDemo',
 			   'Implementation-Title': 'Sample-Gradle',
 			   'Implementation-Version': version
 	}
+
+
+
 }
