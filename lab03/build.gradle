@@ -1,19 +1,5 @@
 apply plugin: 'java'
 
-buildscript{
-repositories {
-
-	flatDir dirs: '/home/scott/csci2020u/proguard5.3.3/lib'
-
-}
-
-dependencies {
-
-	classpath ':proguard:'
-
-
- }
-}
 
 repositories {
 
@@ -34,17 +20,15 @@ sourceCompatibility = 1.7
 version = '1.0'
 jar {
 	manifest {
-		attributes 'Main-Class': 'lab03.CSVDemo',
-			   'Implementation-Title': 'Sample-Gradle',
+		attributes 'Main-Class': 'csci2020u.lab03.CSVDemo',
+			   'Implementation-Title': 'Lab03',
 			   'Implementation-Version': version
 	}
 
 }
 
-task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
-	configuration 'proguard.cfg'
 
-	injars 'build/libs/lab03-1.0.jar'
-	outjars 'build/libs/lab03-1.0.min.jar'	
-
+task execute(type:JavaExec, dependsOn: 'classes') {
+main = 'csci2020u.lab03.CSVDemo'
+classpath = sourceSets.main.runtimeClasspath
 }
